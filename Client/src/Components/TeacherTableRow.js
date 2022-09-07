@@ -10,7 +10,7 @@ console.log(subjects);
 const deleteTeacher = () => {
 	axios
 	.delete(
-"http://localhost:4000/teachers/delete-teacher/" + _id)
+"http://localhost:5000/teachers/delete-teacher/" + _id)
 	.then((res) => {
 		if (res.status === 200) {
 		alert("Teacher successfully deleted");
