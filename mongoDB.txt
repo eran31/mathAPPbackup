@@ -1,0 +1,5 @@
+userName - Admin
+Password - @chicool1984
+
+- Local:            http://localhost:3000      │
+- On Your Network:  http://172.22.208.1:3000 
