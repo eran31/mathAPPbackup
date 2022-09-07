@@ -71,5 +71,6 @@ app.get('/api/ROUTE',(res,req)=>{
 });
 
 app.get('*', (req,res)=>{
-	res.sendFile(__dirname+ 'Client/build/index.html');
+	const index = path.join(__dirname, 'Client/build', 'index.html');
+	res.sendFile(index);
 });
