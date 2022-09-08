@@ -70,7 +70,13 @@ app.get('/api/ROUTE',(res,req)=>{
 
 });
 
-app.get('*', (req,res)=>{
+/*app.get('*', (req,res)=>{
 	const index = path.join(__dirname, 'Client/build', 'index.html');
 	res.sendFile(index);
-});
+});*/
+if (process.env.PORT) {
+    app.use(express.static(path.resolve(process.cwd(), 'Client/build')))
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(process.cwd(), 'Client/build/index.html'))
+    })
+  }
