@@ -75,7 +75,7 @@ app.get('/api/ROUTE',(res,req)=>{
 	res.sendFile(index);
 });*/
 if (process.env.PORT) {
-    app.use(express.static(path.resolve(process.cwd(), 'Client/build')))
+    app.use(express.static(path.resolve(process.cwd(), 'Client/build/index.html')))
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(process.cwd(), 'Client/build/index.html'))
     })
