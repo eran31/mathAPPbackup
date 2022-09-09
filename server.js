@@ -12,7 +12,7 @@ let configDB = "mongodb+srv://Admin:chicool1984@mathapp.okhhcyl.mongodb.net/math
 //let configDB = `mongodb+srv://${DB_USER}:${DB_PASSWOR}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`
 // Express Route
 
-const studentRoute = require('./routes/student.route')
+const studentRoute = require('./routes/Student.route')
 const teacherRoute = require('./routes/Teacher.route')
 
 
