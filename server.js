@@ -12,7 +12,7 @@ let configDB = "mongodb+srv://Admin:chicool1984@mathapp.okhhcyl.mongodb.net/math
 //let configDB = `mongodb+srv://${DB_USER}:${DB_PASSWOR}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`
 // Express Route
 
-const studentRoute = require('./routes/student.route')
+const studentRoute = require('./routes/Student.route')
 const teacherRoute = require('./routes/Teacher.route')
 
 
@@ -77,7 +77,14 @@ app.get('/api/ROUTE',(res,req)=>{
 
 });
 
-app.get('*', (req,res)=>{
+/*app.get('*', (req,res)=>{
 	const index = path.join(__dirname, 'Client/build', 'index.html');
 	res.sendFile(index);
-});
+});*/
+/*if (process.env.PORT) {
+    app.use(express.static(path.resolve(process.cwd(), 'Client/build/index.html')))
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(process.cwd(), 'Client/build/index.html'))
+    })
+  }
+*/
