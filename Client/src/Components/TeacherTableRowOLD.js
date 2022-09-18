@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const TeacherTableRow = (props) => {
-const { _id, name, email, phone, password , rollno} = props.obj;
-//console.log("id" + _id);
+const { _id, name, email,  password, phone, aboutMe, subjects} = props.obj;
+
+console.log(subjects);
 const deleteTeacher = () => {
 	axios
 	.delete(
-"http://localhost:4000/teachers/delete-teacher/" + _id)
+"http://localhost:5000/teachers/delete-teacher/" + _id)
 	.then((res) => {
 		if (res.status === 200) {
 		alert("Teacher successfully deleted");
@@ -20,14 +21,14 @@ const deleteTeacher = () => {
 };
 
 return (
+    
 	<tr>
 	<td>{name}</td>
 	<td>{email}</td>
-	<td>{phone}</td>
+	<td>{aboutMe}</td>
 	<td>{password}</td>
-	<td>{rollno}</td>
-	
-	
+	<td>{phone}</td>
+    <td>{subjects}</td>
 	<td>
 		<Link className="edit-link"
 		to={"/edit-teacher/" + _id}>

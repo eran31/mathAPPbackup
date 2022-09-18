@@ -28,12 +28,16 @@ return (
 	<Table striped bordered hover>
 		<thead>
 		<tr>
+			<th>title</th>
 			<th>full Name</th>
+			<th>age</th>
+			<th>price</th>
 			<th>Email</th>
 			<th>about me</th>
 			<th>PassWord</th>
 			<th>Phone</th>
 			<th>Subjects</th>
+			<th>Services</th>
             <th>Action</th>
 		</tr>
 		</thead>

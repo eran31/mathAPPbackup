@@ -22,11 +22,41 @@ return (
 	<Formik {...props} validationSchema={validationSchema}>
 		<Form>
 		<FormGroup>
+			<lable>title</lable>
+			<Field name="title" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="title"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		<FormGroup>
 			<lable>full name</lable>
 			<Field name="name" type="text"
 				className="form-control" />
 			<ErrorMessage
 			name="name"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		<FormGroup>
+			<lable>age</lable>
+			<Field name="age" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="age"
+			className="d-block invalid-feedback"
+			component="span"
+			/>
+		</FormGroup>
+		<FormGroup>
+			<lable>price</lable>
+			<Field name="price" type="text"
+				className="form-control" />
+			<ErrorMessage
+			name="price"
 			className="d-block invalid-feedback"
 			component="span"
 			/>
@@ -78,6 +108,24 @@ return (
             </label>
             <label>
               <Field type="checkbox" name="subjects" value="Computers" />
+              Computers
+            </label>
+          </div>
+
+</FormGroup>
+<FormGroup>
+		  <label>Services:</label>
+		  <div role="group" aria-labelledby="checkbox-group">
+            <label>
+              <Field type="checkbox" name="services" value="שיעור ראשון חינם" />
+              שיעור ראשון חינם
+            </label>
+            <label>
+              <Field type="checkbox" name="services" value="שיעורי אונליין" />
+              שיעורי אונליין
+            </label>
+            <label>
+              <Field type="checkbox" name="services" value="Computers" />
               Computers
             </label>
           </div>

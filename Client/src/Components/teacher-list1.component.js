@@ -8,7 +8,7 @@ const [teachers, setTeachers] = useState([]);
 
 useEffect(() => {
 	axios
-	.get("http://localhost:4000/teachers/")
+	.get("http://localhost:5000/teachers/")
 	.then(({ data }) => {
 		setTeachers(data);
 	})
@@ -28,14 +28,14 @@ return (
 	<Table striped bordered hover>
 		<thead>
 		<tr>
+			<th>title</th>
 			<th>full Name</th>
 			<th>Email</th>
-			<th>phone</th>
-			<th>password</th>
-			
-			<th>roll no</th>
-			
-			<th>Action</th>
+			<th>about me</th>
+			<th>PassWord</th>
+			<th>Phone</th>
+			<th>Subjects</th>
+            <th>Action</th>
 		</tr>
 		</thead>
 		<tbody>{DataTable()}</tbody>

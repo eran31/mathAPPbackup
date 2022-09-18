@@ -7,14 +7,20 @@ import TeacherForm from "./TeacherForm";
 import { useParams } from "react-router-dom";
 
 // EditStudent Component
-const EditTeacher = (props) => {
+const EditStudent = (props) => {
 	const { id } = useParams()
 const [formValues, setFormValues] = useState({
+	title:"",
 	name: "",
+	age:"",
+	price:"",
 	email: "",
-	grade: "",
+	phone:"",
 	password:"",
-	phone:""
+    aboutMe: "",
+	subjects:"",
+	services:""
+	
 });
 
 //eran change
@@ -23,8 +29,6 @@ const onSubmit = (teacherObject) => {
 	axios
 	.put(
 		"http://localhost:5000/teachers/update-teacher/" +
-		
-		//"http://localhost:5000/teachers/update-teacher/" +
 		//props.match.params.id,
 		id,
 		teacherObject
@@ -45,11 +49,12 @@ useEffect(() => {
 	.get(
 		"http://localhost:5000/teachers/update-teacher/"
 		//+ props.match.params.id
+       // + props.params.id
 		+id
 	)
 	.then((res) => {
-		const { name, email, password, phone, aboutMe, subjects } = res.data;
-		setFormValues({ name, email, password, phone, aboutMe, subjects });
+		const { title, name, email,age,price, phone, password, aboutMe, subjects, services} = res.data;
+		setFormValues({ title,  name, email, age,price,phone,password,   aboutMe,  subjects,services });
 	})
 	.catch((err) => console.log(err));
 }, []);
@@ -67,4 +72,4 @@ return (
 };
 
 // Export EditStudent Component
-export default EditTeacher;
+export default EditStudent;

@@ -5,15 +5,15 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import TeacherForm from "./TeacherForm";
 
-// CreateStudent Component
+// CreateTeacher Component
 const CreateTeacher = () => {
 const [formValues, setFormValues] =
-	useState({ name: '', password:'', email: '', phone:'',  aboutMe: '', subjects:[] })
+	useState({title:'',  name: '', age:'', price:'', email: '' , aboutMe:'',  phone:'' ,password:'',  subjects:[] })
 // onSubmit handler
 const onSubmit = teacherObject => {
 	axios.post(
 'http://localhost:5000/teachers/create-teacher',
-    teacherObject)
+teacherObject)
 	.then(res => {
 		if (res.status === 200)
 		alert('Teacher successfully created')
