@@ -36,7 +36,13 @@ error => {
 )
 
 //server static files from the react app
-app.use(express.static('Client/build'));
+if (process.env.PORT) {
+    app.use(express.static(path.resolve(process.cwd(), 'Client/build')))
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(process.cwd(), 'Client/build/index.html'))
+    })
+  }
+//app.use(express.static('Client/build'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
