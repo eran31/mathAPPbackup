@@ -44,7 +44,7 @@ error => {
   }
   */
 
-app.use(express.static('Client/build/index.html'));
+app.use(express.static('Client/build'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
