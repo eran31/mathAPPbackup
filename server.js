@@ -43,7 +43,8 @@ error => {
     })
   }
   */
-//app.use(express.static('Client/build'));
+
+app.use(express.static('Client/build'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -55,7 +56,8 @@ app.use('/teachers',teacherRoute)
 app.use('/api/teachers',teacherRoute);
 app.use('/api/students',studentRoute);
 // PORT
-const port = process.env.PORT || 5000;
+//const port = process.env.PORT || 5000;
+const port =10000;
 const server = app.listen(port, () => {
 console.log('Connected to port ' + port)
 })
